@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bus Ticket Booking System</title>
+    <style>
+        body{
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+
+        .box{
+            width: 350px;
+            margin: 80px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        input, select{
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button{
+            width: 100%;
+            padding: 12px;
+            background: green;
+            color: white;
+            border: none;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>🚌 Bus Ticket Booking System</h2>
+
+    <input type="text" placeholder="Passenger Name">
+
+    <input type="number" placeholder="Age">
+
+    <select>
+        <option>Select Ticket Type</option>
+        <option value="300">AC 300</option>
+        <option value="150">Non-AC 150</option>
+        <option value="700">Sleeper 700</option>
+        <option value="800">Luxury 800 </option>
+    </select>
+
+    <select>
+        <option>Select City</option>
+        <option>Mumbai</option>
+        <option>Pune</option>
+        <option>Nagpur</option>
+        <option>Hyderabad</option>
+        <option>Latur</option>
+    </select>
+
+    <button>Book Ticket</button>
+</div>
+
+</body>
+</html>
