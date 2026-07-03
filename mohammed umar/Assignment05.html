@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Timetable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+        .college-header {
+            background-color: #1b5e20;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px;
+        }
+        .sub-header {
+            background-color: #f9f9f9;
+            color: #333;
+            font-size: 18px;
+            padding: 10px;
+        }
+        .days-header {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .lunch-break {
+            background-color: #ffe0b2;
+            font-weight: bold;
+            font-style: italic;
+        }
+        .lab-session {
+            background-color: #e1f5fe;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <!-- College Name using Colspan -->
+            <tr>
+                <th colspan="6" class="college-header">EXCELLENCE INSTITUTE OF TECHNOLOGY & SCIENCE</th>
+            </tr>
+            <!-- Academic Year using Colspan -->
+            <tr>
+                <th colspan="6" class="sub-header">Academic Timetable: 2026 - 2027</th>
+            </tr>
+            <tr class="days-header">
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Morning Sessions -->
+            <tr>
+                <td>09:00am - 10:00am</td>
+                <td>Mathematics</td>
+                <td>Physics</td>
+                <td>Chemistry</td>
+                <td>English</td>
+                <td>Computer Science</td>
+            </tr>
+            <tr>
+                <td>10:00am - 11:00am</td>
+                <td>Physics</td>
+                <td>Chemistry</td>
+                <td>Mathematics</td>
+                <td>History</td>
+                <td>English</td>
+            </tr>
+
+            <!-- Subject Row -->
+            <tr>
+                <td>11:00am - 12:00pm</td>
+                <td>Biology</td>
+                <td>Economics</td>
+                <td>Geography</td>
+                <td>Biology</td>
+                <td>Economics</td>
+            </tr>
+
+            <!-- Lunch Break using Colspan -->
+            <tr>
+                <td>12:00pm - 01:00pm</td>
+                <td colspan="5" class="lunch-break">LUNCH BREAK</td>
+            </tr>
+
+            <!-- Afternoon Sessions with Rowspan -->
+            <tr>
+                <td>01:00pm - 02:00pm</td>
+                <td rowspan="2" class="lab-session">Physics Lab</td>
+                <td>English</td>
+                <td rowspan="2" class="lab-session">Computer Lab</td>
+                <td>Mathematics</td>
+                <td>Physics</td>
+            </tr>
+            <tr>
+                <td>02:00pm - 03:00pm</td>
+                <!-- Monday and Wednesday slots are taken by rowspan above -->
+                <td>History</td>
+                <!-- Wednesday is taken -->
+                <td>Chemistry</td>
+                <td>Library</td>
+            </tr>
+
+            <tr>
+                <td>03:00pm - 04:00pm</td>
+                <td>Seminar</td>
+                <td>Sports</td>
+                <td>Mathematics</td>
+                <td>Physics</td>
+                <td>Club Activity</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="margin-top: 20px; text-align: center; font-size: 0.9em; color: #666;">
+        <p>Demonstrated Concepts: <strong>Table</strong>, <strong>Rowspan</strong> (Labs), and <strong>Colspan</strong> (Header Rows & Lunch Break).</p>
+    </div>
+
+</body>
+</html>
