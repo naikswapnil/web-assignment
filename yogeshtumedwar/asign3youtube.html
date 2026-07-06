@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>YouTube UI</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#111;
+color:white;
+}
+
+.header{
+height:60px;
+background:#181818;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 20px;
+}
+
+.logo{
+font-size:30px;
+color:red;
+font-weight:bold;
+}
+
+.search{
+width:400px;
+height:35px;
+border-radius:20px;
+border:1px solid gray;
+background:#222;
+}
+
+.profile{
+width:40px;
+height:40px;
+background:purple;
+border-radius:50%;
+}
+
+.container{
+display:flex;
+}
+
+.sidebar{
+width:80px;
+height:100vh;
+background:#181818;
+padding-top:20px;
+}
+
+.icon{
+width:45px;
+height:45px;
+background:#333;
+margin:20px auto;
+border-radius:10px;
+}
+
+.content{
+padding:20px;
+}
+
+.buttons button{
+background:#333;
+color:white;
+border:none;
+padding:10px 20px;
+margin-right:10px;
+border-radius:20px;
+cursor:pointer;
+}
+
+.cards{
+display:flex;
+margin-top:20px;
+gap:20px;
+}
+
+.card{
+width:220px;
+}
+
+.thumbnail{
+height:130px;
+border-radius:10px;
+}
+
+.blue{background:#4285F4;}
+.green{background:#1ABC9C;}
+.pink{background:#E84393;}
+
+.title{
+margin-top:10px;
+font-weight:bold;
+}
+
+.info{
+color:gray;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<div class="logo">▶ YouTube</div>
+
+<input class="search" type="text">
+
+<div class="profile"></div>
+</div>
+
+<div class="container">
+
+<div class="sidebar">
+<div class="icon"></div>
+<div class="icon"></div>
+<div class="icon"></div>
+</div>
+
+<div class="content">
+
+<div class="buttons">
+<button>All</button>
+<button>Gaming</button>
+<button>Music</button>
+<button>Live</button>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<div class="thumbnail blue"></div>
+<p class="title">Learn HTML & CSS</p>
+<p class="info">120K views • 2 days ago</p>
+</div>
+
+<div class="card">
+<div class="thumbnail green"></div>
+<p class="title">Building a Travel App</p>
+<p class="info">45K views • 5 hours ago</p>
+</div>
+
+<div class="card">
+<div class="thumbnail pink"></div>
+<p class="title">Lofi Hip Hop Radio</p>
+<p class="info">14K watching</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
