@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>YouTube Clone</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0f0f0f;
+    color:white;
+    font-family:Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar{
+    background:#202020;
+    padding:15px;
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+}
+
+/* Category Buttons */
+.categories{
+    padding:10px;
+    text-align:center;
+}
+
+.categories button{
+    background:#303030;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    margin:5px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+/* Video Grid */
+.video-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.video-card{
+    background:#202020;
+    border-radius:10px;
+    overflow:hidden;
+}

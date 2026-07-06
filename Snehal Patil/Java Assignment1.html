@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        background-color: aliceblue;
+        font-family:Arial, sans-serif;
+    }
+
+    .container{
+        text-align:center;
+        background-color: white;
+        padding:30px;
+        border-radius: 10px;
+        box-shadow:0 0 10px rgba(0,0,0,0.2);
+    
+    }
+
+    h1{
+        font-size:50px;
+        color:blue;
+    }
+
+    button{
+        padding:10px 20px;
+        margin:10px;
+        font-size:18px;
+        border:none;
+        border-radius:5px;
+        cursor:pointer;
+        color:white
+    }
+    
+    .increase{
+        background:green;
+    }
+
+    .decrease{
+        background:red;
+    }
+
+    .reset{
+        background:blue;
+    }
+</style>
+<body>
+    <div class="container">
+        <h2>Counter app</h2>
+
+        <h1 id="count">0</h1>
+
+        <button class="increase" onclick="increaseCount()">
+            Increase
+        </button>
+
+        <button class="decrease" onclick="decreaseCount()">
+            Decrease
+        </button>
+
+        <button class="reset" onclick="resetCounter()">
+            Reset
+        </button>
+
+     </div>
+
+     <script>
+        let count = 0;
+
+        function increaseCount(){
+            count++;
+            document.getElementById("count").innerHTML = count;
+        }
+
+        function decreaseCount(){
+            count--;
+            document.getElementById("count").innerHTML = count;
+        }
+
+        function resetCounter(){
+            count = 0;
+            document.getElementById("count").innerHTML = count;
+        }
+     </script>
+</body>
+</html>

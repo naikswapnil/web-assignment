@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket Booking System</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .header {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #0a7d00;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 500;                                                                                                                                                                                                                                                   
+        }
+
+        button:hover {
+            background-color: #065a00;
+        }
+
+        .ticket-details {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .ticket-details h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+        }
+
+        .ticket-details p {
+            margin: 6px 0;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .payable {
+            color: #0a7d00;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">🚌 Bus Ticket Booking System</div>
+        
+        <input type="text" id="name" placeholder="Passenger Name">
+        <input type="number" id="age" placeholder="Age">
+        <select id="ticketType">
+            <option value="">Select Ticket Type</option>
+            <option value="300">Regular - ₹300</option>
+            <option value="500">AC - ₹500</option>
+            <option value="700">Sleeper - ₹700</option>
+        </select>
+        <input type="number" id="tickets" placeholder="Number of Tickets" min="1" value="1">
+        
+        <button onclick="bookTicket()">Book Ticket</button>
+
+        <div class="ticket-details" id="ticketDetails">
+            <h3>Ticket Details</h3>
+            <p><strong>Passenger Name:</strong> <span id="dName"></span></p>
+            <p><strong>Age:</strong> <span id="dAge"></span></p>
+            <p><strong>Number of Tickets:</strong> <span id="dTickets"></span></p>
+            <p><strong>Total Amount:</strong> ₹<span id="dTotal"></span></p>
+            <p><strong>Discount:</strong> ₹<span id="dDiscount"></span></p>
+            <p><strong>Payable Amount:</strong> <span class="payable">₹<span id="dPayable"></span></span></p>
+        </div>
+    </div>
+
+    <script>
+        function bookTicket() {
+            const name = document.getElementById('name').value;
+            const age = parseInt(document.getElementById('age').value);
+            const ticketPrice = parseInt(document.getElementById('ticketType').value);
+            const tickets = parseInt(document.getElementById('tickets').value);
+
+            if (!name || !age || !ticketPrice || !tickets) {
+                alert('Please fill all fields');
+                return;
+            }
+
+            let totalAmount = ticketPrice * tickets;
+            let discount = 0;
+
+            // Age-based discount logic
+            if (age < 5) {
+                discount = totalAmount; // 100% discount for kids under 5
+            } else if (age >= 60) {
+                discount = totalAmount * 0.25; // 25% discount for seniors
+            } else if (age <= 12) {
+                discount = totalAmount * 0.10; // 10% discount for children
+            }
+
+            let payableAmount = totalAmount - discount;
+
+            // Display details
+            document.getElementById('dName').textContent = name;
+            document.getElementById('dAge').textContent = age;
+            document.getElementById('dTickets').textContent = tickets;
+            document.getElementById('dTotal').textContent = totalAmount;
+            document.getElementById('dDiscount').textContent = discount;
+            document.getElementById('dPayable').textContent = payableAmount;
+
+            document.getElementById('ticketDetails').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

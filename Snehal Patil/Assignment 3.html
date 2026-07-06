@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <h1>Student Registration Form</h1>
+</head>
+<body>
+    
+    <form action="/submit.php" method="post">
+
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname"><br><br>
+
+    <label for="email">Eamil:</label>
+    <input type="text" id="email"><br><br>
+
+    <label for="password">Password:</label>
+    <input type="text" id="password"><br><br>
+
+    <label for="password">Confirm password:</label>
+    <input type="text" id="confirm"><br><br>
+
+    <label for="Tel">Mobile Number:</label>
+    <input type="text" id="Tel"><br><br>
+
+    <label for="Date">Date of birth:</label>
+    <input type="text" id="Date"><br><br>
+
+    <h2>Genders:</h2>
+    <input type="radio" id="male" name="gender" value="Male">
+    <label for="male">Male</label><br><br>
+
+    <input type="radio" id="female" name="gender" value="Female">
+    <label for="female">Female</label><br><br>
+
+    <input type="radio" id="other" name="gender" value="Other">
+    <label for="other">Other</label><br><br>
+
+    <label for="course">Course:</label><br>
+    <select name="coures">
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>jAVA</option>
+        <option>PYTHON</option>
+        <option>C++</option>
+    </select>
+
+    <h2>hobbies:</h2>
+    <input type="checkbox" id="hobbies" name="hobbies" value="Reading">
+    <label for="hobbies">Reading</label><br><br>
+
+    <input type="checkbox" id="hobbies" name="hobbies" value="Sports">
+    <label for="hobbies">Sports</label><br><br>
+
+    <input type="checkbox" id="hobbies" name="hobbies" value="Music">
+    <label for="hobbies">Music</label><br><br>
+    
+    <label for="address">Address:</lable><br>
+    <textarea name="address" cols="30" row="10"></textarea><br><br>
+
+    <label for="profile photo">Profile photo:</label><br>
+    <input type="file" id="file" name="photo"><br><br>
+
+    
+    <input type="submit" value="submit">
+    
+
+    <input type="reset" value="reset"><br><br>
+    
+
+    
+    
+
+</form>
+</body>
+</html>
