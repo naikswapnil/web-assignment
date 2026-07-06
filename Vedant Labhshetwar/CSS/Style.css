@@ -1,0 +1,13 @@
+body{
+    background-color:rgba(107, 107, 107, 0.816)
+
+}
+
+P{
+    color:rgb(0, 0, 0);
+    border:3px solid rgb(71, 236, 0);
+}
+ p{
+    color: blue;
+    border: 1px solid blue;
+ }

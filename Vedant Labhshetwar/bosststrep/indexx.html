@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Account Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body style="background-color: #0573e0;">
+    <div class="container py-5">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h1 class="h3 mb-4">Create your account</h1>
+          <form class="row g-3" novalidate>
+            <div class="col-md-6">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="fullName" placeholder="Name" required>
+            </div>
+            <div class="col-md-6">
+              <label for="inputEmail4" class="form-label">Email</label>
+              <input type="email" class="form-control" id="inputEmail4" placeholder="example@mail.com" required>
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Password</label>
+              <input type="password" class="form-control" id="inputPassword4" placeholder="Password" required>
+            </div>
+            <div class="col-md-6">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="tel" class="form-control" id="phone" placeholder="+91 98765 43210">
+            </div>
+            <div class="col-md-4">
+              <label for="dob" class="form-label">Date of Birth</label>
+              <input type="date" class="form-control" id="dob">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label d-block">Gender</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male">
+                <label class="form-check-label" for="genderMale">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="female">
+                <label class="form-check-label" for="genderFemale">Female</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="genderOther" value="other">
+                <label class="form-check-label" for="genderOther">Other</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="profilePicture" class="form-label">Profile picture</label>
+              <input class="form-control" type="file" id="profilePicture" accept="image/*">
+            </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="col-12">
+              <label for="inputAddress2" class="form-label">Address 2</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="col-md-6">
+              <label for="inputCity" class="form-label">City</label>
+              <input type="text" class="form-control" id="inputCity" placeholder="City">
+            </div>
+            <div class="col-md-4">
+              <label for="inputState" class="form-label">State</label>
+              <select id="inputState" class="form-select">
+                <option selected>Choose...</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="West Bengal">West Bengal</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="inputZip" placeholder="123456">
+            </div>
+            <div class="col-12">
+              <label for="about" class="form-label">About you</label>
+              <textarea class="form-control" id="about" rows="3" placeholder="Tell us a little about yourself"></textarea>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  I agree to the terms and privacy policy
+                </label>
+              </div>
+            </div>
+            <div class="col-12 d-flex gap-2">
+              <button type="submit" class="btn btn-primary">Sign up</button>
+              <button type="reset" class="btn btn-outline-secondary">Reset</button>
+            </div>
+          </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      function validateForm() {
+        var form = document.querySelector('form');
+        if (!form.checkValidity()) {
+          form.classList.add('was-validated');
+          return false;
+        }
+        alert('Form is valid and ready to submit.');
+        return true;
+      }
+
+      function resetForm() {
+        var form = document.querySelector('form');
+        form.classList.remove('was-validated');
+        form.reset();
+      }
+
+      function previewProfilePicture(event) {
+        var input = event.target;
+        var preview = document.getElementById('profilePreview');
+        if (!preview) {
+          preview = document.createElement('img');
+          preview.id = 'profilePreview';
+          preview.style.maxWidth = '100px';
+          preview.style.marginTop = '10px';
+          input.parentNode.appendChild(preview);
+        }
+        var file = input.files[0];
+        if (file) {
+          preview.src = URL.createObjectURL(file);
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var form = document.querySelector('form');
+        form.addEventListener('submit', function (event) {
+          if (!validateForm()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+        }, false);
+
+        var resetButton = form.querySelector('[type="reset"]');
+        resetButton.addEventListener('click', function () {
+          resetForm();
+        });
+
+        var profilePicture = document.getElementById('profilePicture');
+        if (profilePicture) {
+          profilePicture.addEventListener('change', previewProfilePicture);
+        }
+      });
+    </script>
+  </body>
+</html>
