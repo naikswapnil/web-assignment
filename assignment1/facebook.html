@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Facebook Login Page</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f0f2f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:80%;
+}
+
+.left{
+    width:50%;
+}
+
+.left h1{
+    color:#1877f2;
+    font-size:60px;
+}
+
+.left p{
+    font-size:28px;
+}
+
+.right{
+    width:40%;
+    background:white;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.login-btn{
+    width:100%;
+    padding:12px;
+    background:#1877f2;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:18px;
+}
+
+.forgot{
+    text-align:center;
+    margin:15px 0;
+    color:#1877f2;
+}
+
+.create-btn{
+    width:100%;
+    padding:12px;
+    background:#42b72a;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="left">
+        <h1>facebook</h1>
+        <p>Connect with friends and the world around you on Facebook.</p>
+    </div>
+
+    <div class="right">
+        <input type="text" placeholder="Email address">
+        <input type="password" placeholder="Password">
+
+        <button class="login-btn">Log In</button>
+
+        <p class="forgot">Forgotten password?</p>
+        <hr><br>
+
+        <button class="create-btn">Create new account</button>
+    </div>
+
+</div>
+
+</body>
+</html>
