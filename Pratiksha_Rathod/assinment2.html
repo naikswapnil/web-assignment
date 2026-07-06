@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Home Page</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        /* Navbar */
+        .navbar{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            border-bottom: 1px solid grey;
+        }
+        .logo{
+            color: red;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .play{
+            color: white;
+        }
+        .search{
+            width: 350px;
+            height: 38px;
+            border-radius: 20px;
+            background-color: black;
+        }
+        .user{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: purple;
+        }
+        /* sidebar */
+        .sidebar{
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 90px;
+            height: 100%;
+            background-color: black;
+            border-right: 1px solid gray;
+            padding-top: 20px;
+        }
+        .icon{
+            width: 40px;
+            height: 40px;
+            background-color: gray;
+            margin: 15px auto;
+            border-radius: 5px;
+        }
+        .icon:first-child{
+            background-color: white;
+        }
+        /* content */
+        .content{
+            margin-left: 110px;
+            margin-top: 80px;
+            padding: 20px;
+        }
+        /* category chips */
+        .chips{
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .chip{
+            background-color: grey;
+            padding: 10px 18px;
+            border-radius: 16px;
+        }
+        .chip:first-child{
+            background-color: white;
+            color: black;
+        }
+        /* video grid */
+        .video-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+            gap: 20px;
+        }
+        .card{
+            background-color: black;
+        }
+        .thumb{
+            height: 140px;
+            border-radius: 10px;
+        }
+        .blue{
+            background-color: royalblue;
+        }
+        .green{
+            background-color: mediumturquoise;
+        }
+        .pink{
+            background-color: deeppink;
+        }
+        .info{
+            display: flex;
+            margin-top: 10px;
+        }
+        .avtar{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .red{
+            background-color: red;
+        }
+        .yellow{
+            background-color: gold;
+        }
+        .blue2{
+            background-color: royalblue;
+        }
+        .text h4{
+            font-size: 14px;
+        }
+        .text p{
+            font-size: 12px;
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <span class="play">▶</span>YouTube
+            </div>
+        <div class="search"></div>
+        <div class="user"></div>
+        </div>
+    <div class="sidebar">
+        <div class="icon"></div>
+        <div class="icon"></div>
+        <div class="icon"></div>
+        </div>
+    <div class="content">
+    <div class="chips">
+        <div class="chip">All</div>
+        <div class="chip">Gaming</div>
+        <div class="chip">Music</div>
+        <div class="chip">Live</div>
+        </div>
+    <div class="video-grid">
+    <div class="card">
+        <div class="thumb blue"></div>
+    <div class="info">
+        <div class="avtar red"></div>
+    <div class="text">
+        <h4>Learn HTML & CSS</h4>
+        <p>Tech Channel</p>
+        <p>120k views . 2 days ago</p>
+        </div>
+        </div>
+        </div>
+    <div class="card">
+        <div class="thumb green"></div>
+    <div class="info">
+        <div class="avtar yellow"></div>
+    <div class="text">
+        <h4>Building a Travel App</h4>
+        <p>Code Starter</p>
+        <P>45k views . 5 hours ago</P>
+        </div>
+        </div>
+        </div>
+    <div class="card">
+        <div class="thumb pink"></div>
+    <div class="info">
+        <div class="avtar blue2"></div>
+    <div class="text">
+        <h4>Lofi Hip Hop Radio</h4>
+        <p>Chill Vibes</p>
+        <p>18k watching</p>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+</body>
+</html>

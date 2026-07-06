@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Counter App</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f4f4f4;
+    font-family:Arial;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 15px gray;
+    text-align:center;
+}
+
+h1{
+    margin-bottom:20px;
+}
+
+#count{
+    font-size:50px;
+    margin:20px;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    margin:5px;
+    transition:0.3s;
+}
+
+.increase{
+    background:green;
+}
+
+.decrease{
+    background:red;
+}
+
+.reset{
+    background:blue;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+    <h1>Counter App</h1>
+
+    <div id="count">0</div>
+
+    <button class="increase" onclick="increase()">Increase</button>
+    <button class="decrease" onclick="decrease()">Decrease</button>
+    <button class="reset" onclick="resetCounter()">Reset</button>
+</div>
+
+<script>
+let count = 0;
+
+function increase(){
+    count++;
+    document.getElementById("count").textContent = count;
+}
+
+function decrease(){
+    count--;
+    document.getElementById("count").textContent = count;
+}
+
+function resetCounter(){
+    count = 0;
+    document.getElementById("count").textContent = count;
+}
+</script>
+
+</body>
+</html>

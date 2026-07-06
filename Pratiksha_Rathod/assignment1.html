@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Home Page</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color:  lightgray;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            gap: 100px;
+        }
+        .left{
+            width: 400px;
+        }
+        .left h1{
+            color: blue;
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+        .left p{
+            font-size: 28px;
+            margin-top: 0px;
+        }
+        .card{
+            background-color: white;
+            padding: 20px;
+            width: 350px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 10px gray;
+            text-align: center;
+        }
+        input{
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        .login{
+            width: 100%;
+            padding: 14px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+        }
+        .forgot{
+            display: block;
+            margin: 15px;
+            text-decoration: none;
+            color: blue;
+        }
+        .create{
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h1>Facebook</h1>
+            <p>Connect with friends and the world around you on Facebook.</p>
+        </div>
+        <div class="card">
+            <input type="text" placeholder="Email or Phone Number">
+            <input type="password" placeholder="Password">
+            <button class="login">Log In</button>
+            <a href="#" class="forgot">Forgotten password</a>
+            <hr>
+            <button class="create">Create new account</button>
+            </div>
+            </div>
+</body>
+</html>

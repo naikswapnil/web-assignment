@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Form</title>
+    <h1>Contact Us:</h1>
+</head>
+<body>
+    <!--Assignment-4-->
+    <form>
+        <label>Name:</label>
+        <input type="text" name="name"><br><br>
+        <label>Email:</label>
+        <input type="email" name="email"><br><br>
+        <label>Phone Number:</label>
+        <input type="tel" name="phone"disabled value="9764135219"><br><br> <!--disabled does not store data in database-->
+        <label>subject:</label>
+        <input type="text" name="subject"readonly name="subject" value="HTML"><br><br> <!--readonly store data in database-->
+        <label>City:</label>
+        <select name="city">
+            <option>Select City</option>
+            <option>Nanded</option>
+            <option>Mumbai</option>
+            <option>Pune</option>
+            <option>Delhi</option>
+            <option>Hyderabad</option>
+        </select><br><br>
+
+        <label>Message</label><br><br>
+        <textarea rows="5" cols="40"></textarea><br><br>
+        <input type="Submit" value="Send Message">
+        <input type="reset" value="Clear">
+
+        <progress value="100" max="200"></progress>
+    </form>
+</body>
+</html> 
