@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title>
+    <style>
+        .container
+        {
+            background-color: white;
+            border-radius: 10px;
+            width:400px;
+            height:400px;
+           margin-top: 30px;
+           box-sizing: 0 0 120 gray;
+          display: flex;
+          flex-direction: column;
+           justify-content: center;
+           align-items: center;
+        }
+        h2{
+            font-family: arial;
+            margin-top: 40px;
+        }
+        input{
+            width:300px;
+            padding: 10px;
+            border-radius: 3;
+        }
+        button{
+            width:322px;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border-radius: 3;
+        }
+        select{
+            width:322px;
+            padding: 10px; 
+            border-radius: 3;
+        }
+        #details
+        {
+            margin-top: 10px;
+              display: flex;
+          flex-direction: column;
+           justify-content: center;
+           align-items: center;
+
+        }
+    </style>
+</head>
+<body style="background-color: #f0f2f5;">
+    <center> 
+    
+    <div class="container">
+        
+         
+         <h2><img src="bus1.jpg" width="50px" height="30px" style="margin-bottom: 0px;" >Bus Ticket bokking System</h2>
+           <form> 
+          <input type="text" id="name" name="name" placeholder="Passenger Name"><br><br>
+          <input type="Number" id="age" name="age" placeholder="Age"><br><br>
+          <select type="text" id="ttype" name="ttype">
+            <option selected>Select Ticket Type</option> 
+            <optiopn>Reguler-&#8377 300</optiopn>
+            <option>Semi-sleeper</optiopn>
+            <option>Sleeper</optiopn>
+            <option>Epress</optiopn>
+            <option>Electric Bus</optiopn>
+          </select><br><br>
+           <input type="Number" id="num" name="num" placeholder="Number of Tickets"> <br><br>
+          
+           <button type="button" onclick="bookTicket()">Book Ticket</button>
+          </form>
+    
+    
+   <div  style="text-align: left;"> 
+    <p id="details"></p>
+    <p id="na"></p>
+    <p id="ag"></p>
+    <p id="type"></p>
+    <p id="tickets"></p>
+    <p id="total"></p>
+    <p id="discount"></p>
+    <p id="payable"></p>
+     </div>       
+    </div>
+    <script>
+       function bookTicket()
+       {
+        let name=document.getElementById("name").value;
+        document.getElementById("na").innerHTML="<h3><b>Ticket Details</b></h3>"+ "Passenger Name:"+name;
+
+        let age=document.getElementById("age").value;
+         document.getElementById("ag").innerHTML= "Age:"+age;
+
+        let tickets=document.getElementById("ttype").value;
+         document.getElementById("type").innerHTML="Ticket type:"+tickets;
+        
+         let tickettype=document.getElementById("num").value;
+           document.getElementById("tickets").innerHTML="Number of Tickets"+tickettype;
+
+        let price=300;
+        let total=price*tickettype;
+        let discount=0;
+        if(tickettype>=5)
+       {
+        discount=total*0.10;
+       }
+       let payable=total-discount;
+
+       document.getElementById("total").innerHTML="Total Amount:"+total;
+        document.getElementById("discount").innerHTML="Discount:"+discount;
+         document.getElementById("payable").innerHTML="Payable Amount"+payable;
+       }
+
+    </script>
+    </center>
+</body>
+</html>

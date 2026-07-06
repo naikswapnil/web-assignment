@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         
+        .table
+        {
+          width:350px;
+          height:250px;
+          border-radius: 10px;
+          border-color: black;
+          background-color: white;
+          box-shadow:0 0 10px gray;
+          text-align: center;
+          
+        }
+        .inc
+        {
+            background: green;
+        }
+         .dec
+        {
+            background:  red;
+        }
+         .res
+        {
+            background: blue;
+        }
+        body{
+             background-color:#f0f2f5;
+             display: flex;
+             align-items: center;
+             height:100vh;
+             font-family: Arial;
+             justify-content: center;
+        }
+        button
+        {
+            padding: 10px;
+            border: none;
+            font-size: 18px;
+            color:white;
+            margin:5;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <center> 
+    <div class="table"> 
+       
+        <h2 style="margin-top: 20px;">Counter App</h1>
+        <h1 id="count">0</h1>
+
+        
+        <button class="inc" onclick="Increase()">Increase</button>
+       
+        <button class="dec" onclick="Decrease()">Decrease</button>
+        
+        <button class="res" onclick="Resent()">Resent</button>
+      
+        </div>
+        <script>
+            let count=0;
+            function Increase()
+            {
+                count++;
+                document.getElementById("count").innerHTML=count;
+            }
+            function Decrease()
+            {
+                count--;
+                document.getElementById("count").innerHTML=count;
+            }
+            function Resent()
+            {
+                count=0;
+                document.getElementById("count").innerHTML=count;
+            }
+            
+        </script>
+       
+</body>
+  </center>
+</html>
