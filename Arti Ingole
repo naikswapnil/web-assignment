@@ -1,2 +1,70 @@
 introducation table.html 
-form.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Introduction</title>
+    <h1>  Welcome To My Introduction Page</h1>
+        <img src="Blog-Cover-IntroductionForChildrenInEng-1-1024x576.jpg" width="100px" height="150px"
+        alt="Introduction Image">
+    <h2> About Me</h2>
+    <p> My name is Rahul Verma. I am a full stack developer.</p>
+    <p> I Love coding and solving problems.</p>
+    <h3> My Hobbies</h3>
+    <p> I enjoy playing cricket in my free time.</p>
+    <p> I love listening to music and traveling.</p>
+    <h4> Favorite Color </h4>
+    <p> my favorite color is pink.</p>
+    <style>
+        table,th,td,tr{
+            border: 1px solid rgba(26, 26, 24, 0.832);
+            width:40%;
+            border-collapse: collapse;
+        }
+    </style>
+    </head>
+    <body>
+        <table>
+
+        </table>
+    </body><!--here table row start code-->
+</html>
+<table>
+    <!--this is table row-->
+    <tr>
+        <!--these are table headings-->
+
+        <th> Roll.no  </th>
+        <th> Name </th>
+        <th> Course </th>
+        <th> City </th>
+        </tr>
+    <!--here table row is closed-->
+    <tr>
+        <!--this is table data cell-->
+        <td> 101 </td>
+        <td> Rahul </td>
+        <td> BCA </td>
+        <td> Nagpur </td>
+    </tr>
+    <tr><!--this is table data cell-->
+        <td> 102 </td>
+        <td> Priya </td>
+        <td> BSc </td>
+        <td> Pune </td>
+        </tr>
+    <tr><!--this is table data cell-->
+        <td> 103 </td>
+        <td> Amit </td>
+        <td> BCom </td>
+        <td> Mumbai </td>
+        </tr>
+</table>
+<!--<table>- defines a table
+ <th> - table heading 
+ <tr> -table row
+  <td> - table data cell -->  
+  </body>
+  </html>
+
