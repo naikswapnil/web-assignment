@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook</title>
+ <style>
+    .container{
+        border: 1px solid;
+        background-color: #f0f2f5;
+        padding: 10px;
+        width: 800px;
+        height: 400px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around;  
+        align-items: center;
+    }
+    .left{
+        display:flex;
+        flex-direction: column;
+    }
+    .container h1{
+        color: #1877f2;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        font-size: 50px;
+         
+    }
+    .container p{
+        color: rgba(9, 9, 9, 0.929);
+        font-size: 24px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    
+     .card{
+        border: 0px solid; 
+        background-color: white;
+        border-radius: 8px;
+        width: 300px;
+        height: 70%; 
+        box-shadow: 0px 2px 10px gray; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        
+    } 
+    input{
+        border-radius: 10px;
+        width:200px; 
+        height: 20%;
+        border-radius: 5px;
+        border: 1px solid lightgray;
+    }
+    .btn{
+        color: white;
+         background-color: #1877f2; 
+         border: 1px solid #1877f2;
+
+    }
+    .bt{
+        background-color: white; 
+        color: #1877f2;
+        border: 0px;       
+    }
+    .b{
+        color: white;
+         background-color: #42b72a; 
+         border-radius: 5px;
+          width:150px; 
+          height: 15%;
+         border: 1px solid #42b72a;
+         display: block;
+         margin: 0 auto;
+    }
+ </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+        <h1>facebook</h1>
+        <p><b>Connect with friends and the world <br>
+         around you on Facebook</b></p>
+        </div>
+           <div class="card">
+              <form>
+                 <label for="Email or phoneNo"></label>
+                 <input type="text" id="Email or phoneNo" name="Email or phoneNo" placeholder="Enetr your Email or Phone"><br>
+
+                <label for="Password"></label><br>
+                 <input type="password" id="Password" name="Password" placeholder="Enetr Password"><br>
+
+                 <label for=""></label><br>
+                 <input  class="btn" type="submit" id="Log In" name="Log In" value="Log In"><br>
+
+                 <label for="Password"></label><br>
+                 <input class="bt"  type="button" id="Password" name="Password" value="Forgotten password?"><br><hr>
+
+                  <label for="new account"></label><br>
+                 <input class="b" type="button" id="new account" name="new account" value="Create new Account">
+
+
+             </form> 
+           </div>
+    </div>
+</body>
+</html>
