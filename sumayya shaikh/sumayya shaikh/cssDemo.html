@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Demo<</title>
+    <style>
+     /* 1. Element Selector */
+     p {
+         color: blue;
+        
+        } 
+    /* 2. Class Selector */ 
+    .highlight { 
+        background-color: yellow; 
+    }
+     /* 3. ID Selector */
+      #header { 
+        font-size: 24px; color: red; 
+      }
+      /* 4. Universal Selector */
+       * { 
+        margin: 5px; padding: 5px;
+     }
+        /* 5. Group Selector */ 
+        h1, h2, p { 
+            font-family: Arial, sans-serif;
+         } 
+         /* 6. Descendant Selector */ 
+         div p { 
+            color: green; font-weight: bold; 
+        }
+         /* 7. Child Selector */ 
+      .parent > p {
+         color: red;
+         } 
+         /* 8. Adjacent Sibling Selector */
+          h3 + p {
+             background-color: lightblue;
+             } 
+             /* 9. General Sibling Selector */ 
+             h4 ~ p { 
+                color: purple;
+             } 
+             /* 10. Attribute Selector */
+              input[type="text"] { 
+                border: 2px solid black;
+             } 
+             /* 11. Pseudo-class Selector */
+              a:hover { 
+                color: red; 
+            }
+             /* 12. Pseudo-element Selector */ 
+         .first-letter-demo::first-letter{
+            font-size: 2em; 
+            color: orange; 
+         }
+         </style>
+</head>
+<body>
+    <h1>CSS Selectors Examples</h1> 
+    <!-- 1. Element Selector --> 
+    <h2>1. Element Selector</h2>
+     <p>This paragraph is selected using the p selector.</p>
+
+     
+     <!-- 2. Class Selector --> 
+      <h2>2. Class Selector</h2> 
+      <p class="highlight">This paragraph uses the highlight class. </p> 
+
+
+      <!-- 3. ID Selector --> 
+       <h2>3. ID Selector</h2> 
+      <h1 id="header">Page Title</h1> 
+
+      <!-- 4. Universal Selector --> 
+       <h2>4. Universal Selector</h2> 
+       <p>All elements have margin and padding applied.</p> 
+
+
+       <!-- 5. Group Selector --> 
+        <h2>5. Group Selector</h2>
+         <p>Arial font applied using grouped selectors.</p> 
+         <!-- 6. Descendant Selector -->
+           <h2>6. Descendant Selector</h2>
+        <div>
+             <section> 
+                <p>This paragraph is inside div and selected.</p>
+             </section> 
+            </div> 
+            <!-- 7. Child Selector --> 
+             <h2>7. Child Selector</h2>
+              <div class="parent"> 
+                <p>Direct child paragraph (Selected)</p> 
+
+                <section> 
+                    <p>Nested paragraph (Not Selected by child selector)</p> 
+                </section>
+             </div> 
+             <!-- 8. Adjacent Sibling Selector --> 
+              <h2>8. Adjacent Sibling Selector</h2> 
+              <h3>Heading 3</h3> 
+              <p>This paragraph is immediately after h3.</p> 
+              <!-- 9. General Sibling Selector -->
+                <h2>9. General Sibling Selector</h2>
+                 <h4>Heading 4</h4>
+                  <p>Following sibling paragraph 1.</p> 
+                  <p>Following sibling paragraph 2.</p> 
+                  <!-- 10. Attribute Selector --> <h2>
+                    10. Attribute Selector</h2>
+                     <input type="text" placeholder="Text Input"> 
+                     <br>
+                      <input type="password" placeholder="Password Input"> 
+                      <!-- 11. Pseudo-class Selector --> 
+                       <h2>11. Pseudo-class Selector</h2> 
+                       <a href="#">Hover over this link</a> 
+                       <!-- 12. Pseudo-element Selector --> <h2>
+                        12. Pseudo-element Selector</h2> 
+                        <p class="first-letter-demo">
+                             This paragraph has a styled first letter.
+                             </p> 
+</body>
+</html>
