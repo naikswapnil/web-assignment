@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Clone</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background:black;
+            color:white;
+            font-family:Arial;
+        }
+
+        /* Navbar */
+        .navbar{
+            height:60px;
+            background:black;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:10px 20px;
+            border-bottom:1px solid gray;
+        }
+
+        .logo{
+            color:red;
+            font-size:22px;
+            font-weight:bold;
+        }
+
+        .search{
+            width:300px;
+            padding:8px;
+            border-radius:20px;
+            border:1px solid gray;
+            background:black;
+            color:white;
+        }
+
+        .profile{
+            width:30px;
+            height:30px;
+            background:purple;
+            border-radius:50%;
+        }
+
+        /* Sidebar */
+        .sidebar{
+            position:fixed;
+            top:60px;
+            left:0;
+            width:80px;
+            height:100%;
+            border-right:1px solid gray;
+            padding-top:20px;
+        }
+
+        .menu{
+            width:40px;
+            height:20px;
+            background:#333;
+            margin:20px auto;
+            border-radius:5px;
+        }
+
+        /* Categories */
+        .category{
+            margin-left:100px;
+            margin-top:20px;
+        }
+
+        .btn{
+            background:#222;
+            color:white;
+            border:none;
+            padding:8px 15px;
+            border-radius:15px;
+            margin-right:10px;
+        }
+
+        .btn:first-child{
+            background:white;
+            color:black;
+        }
+
+        /* Video Grid */
+        .videos{
+            margin-left:100px;
+            margin-top:20px;
+            display:flex;
+            gap:20px;
+        }
+
+        .card{
+            width:180px;
+        }
+
+        .thumbnail{
+            height:100px;
+            border-radius:10px;
+        }
+
+        .blue{
+            background:#4285f4;
+        }
+
+        .green{
+            background:#10b981;
+        }
+
+        .pink{
+            background:#ec4899;
+        }
+
+        .info{
+            display:flex;
+            margin-top:10px;
+        }
+
+        .channel{
+            width:15px;
+            height:15px;
+            border-radius:50%;
+            margin-right:10px;
+        }
+
+        .red{
+            background:red;
+        }
+
+        .yellow{
+            background:gold;
+        }
+
+        .sky{
+            background:#3b82f6;
+        }
+
+        small{
+            color:gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">▶ YouTube</div>
+
+        <input type="text" class="search">
+
+        <div class="profile"></div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="menu"></div>
+        <div class="menu"></div>
+        <div class="menu"></div>
+    </div>
+
+    <!-- Category Buttons -->
+    <div class="category">
+        <button class="btn">All</button>
+        <button class="btn">Gaming</button>
+        <button class="btn">Music</button>
+        <button class="btn">Live</button>
+    </div>
+
+    <!-- Videos -->
+    <div class="videos">
+
+        <div class="card">
+            <div class="thumbnail blue"></div>
+
+            <div class="info">
+                <div class="channel red"></div>
+
+                <div>
+                    <b>Learn HTML & CSS</b><br>
+                    <small>Tech Channel</small><br>
+                    <small>120K views · 2 days ago</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="thumbnail green"></div>
+
+            <div class="info">
+                <div class="channel yellow"></div>
+
+                <div>
+                    <b>Building a Travel App</b><br>
+                    <small>Code Master</small><br>
+                    <small>45K views · 5 hours ago</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="thumbnail pink"></div>
+
+            <div class="info">
+                <div class="channel sky"></div>
+
+                <div>
+                    <b>Lofi Hip Hop Radio</b><br>
+                    <small>Chill Vibes</small><br>
+                    <small>14K watching</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

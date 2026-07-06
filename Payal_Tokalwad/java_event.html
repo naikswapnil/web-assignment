@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Keyboard Event</title>
+</head>
+<body>
+
+    <h1>keyboard event</h1>
+
+    <div class="keyevent">
+
+        <label>enter name:</label>
+        <input type="text" id="name" name="name"
+               onkeydown="alert('you have pressed the key')">
+        <br>
+
+        <label>enter email:</label>
+        <input type="email" id="email" name="email"
+               onfocus="alert('focus event applied')"
+               onblur="alert('blur event applied')">
+        <br>
+
+        <label>enter password:</label>
+        <input type="password" id="password" name="password"
+               onkeyup="alert('keyup event applied')">
+        <br>
+
+        <label>contact:</label>
+        <input type="number" id="contact"
+               onmouseover="alert('mouse is hovered on contact')"
+               onmouseout="alert('mouse out from contact')">
+        <br>
+
+        <select onchange="alert('change event applied')">
+            <option>Select Course</option>
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>JavaScript</option>
+        </select>
+        <br><br>
+
+        <input type="text"
+               oninput="alert('input event applied')"
+               placeholder="input event">
+        <br><br>
+
+        <form onsubmit="alert('form submitted')">
+            <button type="submit">submit</button>
+        </form>
+
+        <button type="reset"
+                onclick="alert('form reset')">
+            reset
+        </button>
+        <br><br>
+
+        <button ondblclick="alert('double click event applied')">
+            double click
+        </button>
+
+    </div>
+
+</body>
+</html>
