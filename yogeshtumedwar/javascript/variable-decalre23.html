@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Example</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+    <p id="square"></p>
+    <p id="remainder"></p>
+
+    <script>
+        let num1 = 12;
+        let num2 = 23;
+
+        document.getElementById("demo").innerHTML =  "Multiplication of two numbers: " + (num1 * num2);
+
+        document.getElementById("demo").style.backgroundColor = "orange";
+        document.getElementById("demo").style.color = "white";
+
+        let num = 25;
+
+        document.getElementById("square").innerHTML = "Square of 25 is: " + (num * num);
+
+        document.getElementById("square").style.backgroundColor = "red";
+        document.getElementById("square").style.color = "white";
+
+        let dividend = 743;
+        let divisor = 7;
+
+        document.getElementById("remainder").innerHTML = "Remainder of 743 ÷ 7 is: " + (dividend % divisor);
+
+        document.getElementById("remainder").style.backgroundColor = "green";
+        document.getElementById("remainder").style.color = "yellow";
+    </script>
+
+</body>
+</html>

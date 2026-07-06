@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript if</h1>
+
+<div id="student">
+    <p id="status">Student pass or fail status</p>
+</div>
+
+<form>
+    Enter Percentage:
+    <input type="number" id="percent"><br>
+    <button type="button" onclick="checkResult()">submit</button>
+</form>
+
+<script>
+
+function checkResult()
+{
+    let percent = document.getElementById("percent").value;
+alert(percent);
+    if(percent >= 60)
+    {
+        document.getElementById("status").innerHTML =  "Student pass or fail status: First Class";
+    }
+    else if(percent >= 35 && percent < 60)
+    {
+        document.getElementById("status").innerHTML =   "Student pass or fail status: Second Class";
+    }
+    else
+    {
+        document.getElementById("status").innerHTML =  "Student pass or fail status: Fail";
+    }
+}
+
+</script>
+
+</body>
+</html>

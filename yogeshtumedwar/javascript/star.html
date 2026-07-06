@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+
+    <h1>For Loop</h1>
+
+    <div id="loop">
+        <p id="values">Values Entered:</p>
+    </div>
+
+    <script>
+        let pattern = "";
+
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= i; j++) {
+                pattern += "*";
+            }
+            pattern += "<br>";
+        }
+
+        document.getElementById("values").innerHTML = pattern;
+    </script>
+
+</body>
+</html>
