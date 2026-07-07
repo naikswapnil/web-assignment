@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bus Ticket Booking System</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+    background:#f2f2f2;
+}
+
+.container{
+    width:400px;
+    margin:40px auto;
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0px 0px 10px gray;
+}
+
+h2{
+    text-align:center;
+}
+
+input,select{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    font-size:16px;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:green;
+    color:white;
+    font-size:18px;
+    border:none;
+    cursor:pointer;
+}
+
+button:hover{
+    background:darkgreen;
+}
+
+#result{
+    margin-top:20px;
+    line-height:28px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🚌 Bus Ticket Booking System</h2>
+
+<input type="text" id="name" placeholder="Passenger Name">
+
+<input type="number" id="age" placeholder="Age">
+
+<select id="ticketType">
+<option value="">Select Ticket Type</option>
+<option value="300">Regular - ₹300</option>
+<option value="500">Sleeper - ₹500</option>
+<option value="800">AC - ₹800</option>
+</select>
+
+<input type="number" id="tickets" placeholder="Number of Tickets">
+
+<button onclick="bookTicket()">Book Ticket</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+function bookTicket(){
+
+    let name=document.getElementById("name").value;
+    let age=parseInt(document.getElementById("age").value);
+    let tickets=parseInt(document.getElementById("tickets").value);
+
+    let select=document.getElementById("ticketType");
+    let value=select.value;
+
+    if(name=="" || isNaN(age) || age<=0 || value=="" || isNaN(tickets) || tickets<=0)
+    {
+        alert("Please fill all fields properly.");
+        return;
+    }
+
+    let i=0;
+    let ticketPrice=0;
+    let ticketName="";
+
+    while(i<select.options.length)
+    {
+        if(select.options[i].value==value)
+        {
+            ticketPrice=parseInt(select.options[i].value);
+            ticketName=select.options[i].text;
+            break;
+        }
+        i++;
+    }
+
+    let total=ticketPrice*tickets;
+
+    let discount=0;
+
+    if(age<5)
+    {
+        discount=total;
+    }
+    else if(age>=5 && age<=12)
+    {
+        discount=total*0.50;
+    }
+    else if(age>=60)
+    {
+        discount=total*0.30;
+    }
+
+    let payable=total-discount;
+
+    document.getElementById("result").innerHTML=
+    "<h3>Ticket Details</h3>"+
+    "<p><b>Passenger Name :</b> "+name+"</p>"+
+    "<p><b>Age :</b> "+age+"</p>"+
+    "<p><b>Ticket Type :</b> "+ticketName+"</p>"+
+    "<p><b>Ticket Price :</b> ₹"+ticketPrice+"</p>"+
+    "<p><b>Number of Tickets :</b> "+tickets+"</p>"+
+    "<p><b>Total Amount :</b> ₹"+total+"</p>"+
+    "<p><b>Discount :</b> ₹"+discount+"</p>"+
+    "<p><b>Final Payable Amount :</b> ₹"+payable+"</p>";
+
+}
+
+</script>
+
+</body>
+</html>

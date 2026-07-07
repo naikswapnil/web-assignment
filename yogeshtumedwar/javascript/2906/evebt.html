@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+</head>
+<body>
+
+<h1>Event Listener</h1>
+
+<div>
+    <label>Enter Name:</label>
+    <input type="text" id="name">
+    <br><br>
+
+    <label>Enter Email:</label>
+    <input type="email" id="email">
+    <br><br>
+
+    <label>Enter Password:</label>
+    <input type="password" id="password">
+    <br><br>
+
+    <!-- Added Button -->
+    <button type="button" id="btn">Submit</button>
+</div>
+
+<script>
+document.getElementById("name").addEventListener("click", function () {
+    alert("Name clicked");
+});
+
+document.getElementById("email").addEventListener("change", function () {
+    alert("Email changed");
+});
+
+document.getElementById("password").addEventListener("change", function () {
+    alert("Password changed");
+});
+
+// Button click event
+document.getElementById("btn").addEventListener("click", function () {
+    alert("Button clicked!");
+});
+</script>
+
+</body>
+</html>

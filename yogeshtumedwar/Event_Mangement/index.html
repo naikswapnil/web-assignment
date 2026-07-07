@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Registration System</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#e8f0fe;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:420px;
+    background:#fff;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#003366;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+input,
+select{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border:1px solid #999;
+    border-radius:5px;
+    font-size:15px;
+}
+
+input:focus,
+select:focus{
+    border:2px solid #0066cc;
+    outline:none;
+}
+
+.error{
+    color:red;
+    font-size:13px;
+}
+
+.button-group{
+    display:flex;
+    justify-content:space-between;
+    margin-top:25px;
+}
+
+.button-group input{
+    width:48%;
+    padding:12px;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+    color:white;
+}
+
+input[type="submit"]{
+    background:green;
+}
+
+input[type="submit"]:hover{
+    background:#006400;
+}
+
+input[type="reset"]{
+    background:red;
+}
+
+input[type="reset"]:hover{
+    background:#b22222;
+}
+
+@media(max-width:500px){
+
+.container{
+    width:90%;
+}
+
+.button-group{
+    flex-direction:column;
+}
+
+.button-group input{
+    width:100%;
+    margin-bottom:10px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Event Registration Form</h2>
+
+<form action="register.php" method="POST" onsubmit="return validateForm();">
+
+<label for="full_name">Full Name</label>
+<input
+type="text"
+id="full_name"
+name="full_name"
+placeholder="Enter Full Name">
+
+<span class="error" id="nameError"></span>
+
+<label for="email">Email Address</label>
+<input
+type="email"
+id="email"
+name="email"
+placeholder="Enter Email Address">
+
+<span class="error" id="emailError"></span>
+
+<label for="mobile">Mobile Number</label>
+<input
+type="text"
+id="mobile"
+name="mobile"
+maxlength="10"
+placeholder="Enter 10 Digit Mobile Number"
+oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+
+<span class="error" id="mobileError"></span>
+
+<label for="event_name">Event Name</label>
+
+<select id="event_name" name="event_name">
+<option value="">Select Event</option>
+<option value="Web Development Workshop">Web Development Workshop</option>
+<option value="AI Workshop">AI Workshop</option>
+<option value="Python Programming">Python Programming</option>
+<option value="Hackathon">Hackathon</option>
+</select>
+
+<span class="error" id="eventError"></span>
+
+<label for="city">City</label>
+
+<select id="city" name="city">
+<option value="">Select City</option>
+<option value="Pune">Pune</option>
+<option value="Mumbai">Mumbai</option>
+<option value="Nagpur">Nagpur</option>
+<option value="Nashik">Nashik</option>
+<option value="Delhi">Delhi</option>
+</select>
+
+<span class="error" id="cityError"></span>
+
+<div class="button-group">
+
+<input type="submit" name="submit" value="Register">
+
+<input type="reset" value="Reset">
+
+</div>
+
+</form>
+
+</div>
+
+<script>
+
+function validateForm()
+{
+
+let valid=true;
+
+let full_name=document.getElementById("full_name").value.trim();
+let email=document.getElementById("email").value.trim();
+let mobile=document.getElementById("mobile").value.trim();
+let event=document.getElementById("event_name").value;
+let city=document.getElementById("city").value;
+
+document.getElementById("nameError").innerHTML="";
+document.getElementById("emailError").innerHTML="";
+document.getElementById("mobileError").innerHTML="";
+document.getElementById("eventError").innerHTML="";
+document.getElementById("cityError").innerHTML="";
+
+let namePattern=/^[A-Za-z ]{3,50}$/;
+let emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+let mobilePattern=/^[0-9]{10}$/;
+
+if(full_name=="")
+{
+document.getElementById("nameError").innerHTML="Full Name is required.";
+valid=false;
+}
+else if(!namePattern.test(full_name))
+{
+document.getElementById("nameError").innerHTML="Use only alphabets and spaces (3-50 characters).";
+valid=false;
+}
+
+if(email=="")
+{
+document.getElementById("emailError").innerHTML="Email Address is required.";
+valid=false;
+}
+else if(!emailPattern.test(email))
+{
+document.getElementById("emailError").innerHTML="Enter a valid Email Address.";
+valid=false;
+}
+
+if(mobile=="")
+{
+document.getElementById("mobileError").innerHTML="Mobile Number is required.";
+valid=false;
+}
+else if(!mobilePattern.test(mobile))
+{
+document.getElementById("mobileError").innerHTML="Mobile Number must contain exactly 10 digits.";
+valid=false;
+}
+
+if(event=="")
+{
+document.getElementById("eventError").innerHTML="Please select an Event.";
+valid=false;
+}
+
+if(city=="")
+{
+document.getElementById("cityError").innerHTML="Please select a City.";
+valid=false;
+}
+
+return valid;
+
+}
+
+</script>
+
+</body>
+</html>
