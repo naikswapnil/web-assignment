@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Event Registration Form</h2>
+
+        <form action="register.php" method="POST" onsubmit="return validateForm()">
+
+            <label>Full Name</label><br>
+            <input type="text" id="fullname" name="full_name"><br><br>
+
+            <label>Email Address</label><br>
+            <input type="email" id="email" name="email"><br><br>
+
+            <label>Mobile Number</label><br>
+            <input type="text" id="mobile" name="mobile"><br><br>
+
+            <label>Event Name</label><br>
+            <select id="event" name="event_name">
+                <option value="">Select Event</option>
+                <option>Workshop</option>
+                <option>Seminar</option>
+                <option>Conference</option>
+                <option>Hackathon</option>
+            </select><br><br>
+
+            <label>City</label><br>
+            <select id="city" name="city">
+                <option value="">Select City</option>
+                <option>Nanded</option>
+                <option>Pune</option>
+                <option>Mumbai</option>
+                <option>Nagpur</option>
+            </select><br><br>
+
+            <input type="submit" value="Register">
+            <input type="reset" value="Reset">
+
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
