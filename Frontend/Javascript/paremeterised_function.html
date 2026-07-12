@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramterised function</title>
+    <h1>Paramterised function</h1>
+</head>
+<body>
+    <div>
+        <p id="result"></p>
+    </div>
+
+<script>
+    function add(a,b,c=35){
+      return a+b+c;
+      
+    }
+   
+    document.getElementById("result").innerHTML =  add(5,10);
+</script>
+</body>
+</html>

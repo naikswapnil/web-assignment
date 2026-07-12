@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snake and Ladder Game</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        text-align: center;
+    }
+
+    .container{
+        width: 500px;
+        margin: 30px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px gray;
+    }
+
+    h1{
+        color: #2c3e50;
+    }
+
+    .status{
+        font-size: 20px;
+        margin: 15px 0;
+    }
+
+    button{
+        padding: 12px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        margin: 10px;
+    }
+
+    .roll{
+        background: green;
+        color: white;
+    }
+
+    .restart{
+        background: crimson;
+        color: white;
+    }
+
+    #message{
+        margin-top: 20px;
+        font-size: 18px;
+        line-height: 1.8;
+    }
+
+    .history{
+        margin-top:20px;
+        background:#f9f9f9;
+        padding:10px;
+        border-radius:5px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🐍 Snake and Ladder Game 🪜</h1>
+
+    <div class="status">
+        Current Position : <span id="position">0</span>
+    </div>
+
+    <div class="status">
+        Last Dice : <span id="diceValue">0</span>
+    </div>
+
+    <button class="roll" onclick="rollDice()">
+        🎲 Roll Dice
+    </button>
+
+    <button class="restart" onclick="restartGame()">
+        🔄 Restart
+    </button>
+
+    <div id="message"></div>
+
+    <div class="history">
+        <h3>Dice History</h3>
+        <div id="history"></div>
+    </div>
+
+</div>
+
+<script>
+
+let position = 0;
+let history = [];
+
+const snakes = {
+    99: 54,
+    95: 72,
+    70: 55,
+    52: 42,
+    25: 2
+};
+
+const ladders = {
+    6: 25,
+    11: 40,
+    30: 60,
+    46: 90,
+    65: 85
+};
+
+function rollDice()
+{
+    if(position == 100)
+    {
+        alert("Game Over! Click Restart.");
+        return;
+    }
+
+    let dice = Math.floor(Math.random() * 6) + 1;
+
+    history.push(dice);
+
+    document.getElementById("diceValue").innerHTML = dice;
+
+    position += dice;
+
+    let msg = "🎲 Dice rolled: " + dice + "<br>";
+
+    // Exact 100 needed
+    if(position > 100)
+    {
+        position -= dice;
+        msg += "⚠ Need exact number to reach 100.<br>";
+    }
+
+    // Ladder check
+    if(ladders[position])
+    {
+        msg += "🪜 Ladder found! " + position + " → " + ladders[position] + "<br>";
+        position = ladders[position];
+    }
+
+    // Snake check
+    if(snakes[position])
+    {
+        msg += "🐍 Snake bite! " + position + " → " + snakes[position] + "<br>";
+        position = snakes[position];
+    }
+
+    // Winning condition
+    if(position == 100)
+    {
+        msg += "<h2 style='color:green'>🎉 Congratulations! You Won!</h2>";
+    }
+
+    document.getElementById("position").innerHTML = position;
+
+    document.getElementById("message").innerHTML = msg;
+
+    document.getElementById("history").innerHTML =
+        history.join(" ➜ ");
+}
+
+function restartGame()
+{
+    position = 0;
+    history = [];
+
+    document.getElementById("position").innerHTML = 0;
+    document.getElementById("diceValue").innerHTML = 0;
+    document.getElementById("message").innerHTML = "";
+    document.getElementById("history").innerHTML = "";
+}
+
+</script>
+
+</body>
+</html>

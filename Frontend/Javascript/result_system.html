@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result System</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f4f4;
+        }
+
+        .container{
+            width:400px;
+            margin:50px auto;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        h2{
+            text-align:center;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            margin:8px 0;
+            box-sizing:border-box;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:green;
+            color:white;
+            border:none;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        #result{
+            margin-top:20px;
+            line-height:1.8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Result System</h2>
+
+    <input type="text" id="name" placeholder="Student Name">
+
+    <input type="number" id="sub1" placeholder="English Marks">
+
+    <input type="number" id="sub2" placeholder="Math Marks">
+
+    <input type="number" id="sub3" placeholder="Science Marks">
+
+    <input type="number" id="sub4" placeholder="Social Marks">
+
+    <input type="number" id="sub5" placeholder="Computer Marks">
+
+    <button onclick="calculateResult()">Calculate Result</button>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+function calculateResult(){
+
+    let name = document.getElementById("name").value;
+
+    let sub1 = Number(document.getElementById("sub1").value);
+    let sub2 = Number(document.getElementById("sub2").value);
+    let sub3 = Number(document.getElementById("sub3").value);
+    let sub4 = Number(document.getElementById("sub4").value);
+    let sub5 = Number(document.getElementById("sub5").value);
+
+    let total = sub1 + sub2 + sub3 + sub4 + sub5;
+
+    let percentage = total / 5;
+
+    let grade;
+
+    if(sub1 < 35 || sub2 < 35 || sub3 < 35 || sub4 < 35 || sub5 < 35){
+        grade = "FAIL";
+    }
+    else if(percentage >= 90){
+        grade = "A+";
+    }
+    else if(percentage >= 80){
+        grade = "A";
+    }
+    else if(percentage >= 70){
+        grade = "B";
+    }
+    else if(percentage >= 60){
+        grade = "C";
+    }
+    else if(percentage >= 35){
+        grade = "D";
+    }
+    else{
+        grade = "FAIL";
+    }
+
+    document.getElementById("result").innerHTML = `
+        <h3>Result Details</h3>
+
+        Student Name : <b>${name}</b><br>
+
+        Total Marks : <b>${total}/500</b><br>
+
+        Percentage : <b>${percentage.toFixed(2)}%</b><br>
+
+        Grade : <b>${grade}</b>
+    `;
+}
+
+</script>
+
+</body>
+</html>
