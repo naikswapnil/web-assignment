@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bus Ticket Booking System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: darkgreen;
+        }
+
+        #result {
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🚌 Bus Ticket Booking System</h2>
+
+    <input type="text" id="name" placeholder="Passenger Name">
+
+    <input type="number" id="age" placeholder="Age">
+
+    <select id="ticketType">
+        <option value="">Select Ticket Type</option>
+        <option value="300">Regular - ₹300</option>
+        <option value="500">Sleeper - ₹500</option>
+        <option value="800">AC - ₹800</option>
+    </select>
+
+    <input type="number" id="tickets" placeholder="Number of Tickets">
+
+    <button onclick="bookTicket()">Book Ticket</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+
+function bookTicket() {
+
+    let name = document.getElementById("name").value;
+    let age = Number(document.getElementById("age").value);
+    let ticketPrice = Number(document.getElementById("ticketType").value);
+    let tickets = Number(document.getElementById("tickets").value);
+
+    if(name == "" || age <= 0 || ticketPrice == 0 || tickets <= 0) {
+        document.getElementById("result").innerHTML =
+        "<span style='color:red'>Please fill all fields properly.</span>";
+        return;
+    }
+
+    let totalAmount = ticketPrice * tickets;
+    let discount = 0;
+
+    // Age-based discount
+    if(age < 5) {
+        discount = totalAmount;          // Free
+    }
+    else if(age <= 12) {
+        discount = totalAmount * 0.50;   // 50%
+    }
+    else if(age >= 60) {
+        discount = totalAmount * 0.30;   // 30%
+    }
+
+    let payableAmount = totalAmount - discount;
+
+    document.getElementById("result").innerHTML = `
+        <h3>Ticket Details</h3>
+
+        Passenger Name : <b>${name}</b><br>
+
+        Age : <b>${age}</b><br>
+
+        Number of Tickets : <b>${tickets}</b><br>
+
+        Total Amount : <b>₹${totalAmount}</b><br>
+
+        Discount : <b>₹${discount}</b><br>
+
+        Payable Amount : <b style="color:green">₹${payableAmount}</b>
+    `;
+}
+
+</script>
+
+</body>
+</html>

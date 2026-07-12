@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        .internal{
+            background-color:azure;
+            color:orangered;
+            border:1px solid blue;
+            padding-left:10px;
+        }
+        p{
+            color:blue;
+        }
+        /* Element Selector    */
+        h1{
+            color: green;
+        }
+        div{
+            border:1px solid black;
+        }
+        /* Class selector */
+        .inline{
+           border:5px solid green; 
+        }
+        /* Id selector */
+        #city1{
+            border:1px solid red;
+        }
+        /* child selector */
+        div > p{
+            color: blue;
+        }
+        /* Universal selector */
+        *{
+            border:5px solid pink;
+        }
+        /* Descendent selector   */
+        div p{
+            color: green;
+            background-color: yellow;
+        }
+        /* Pseudo selector */
+        p:first-child{
+            color:brown;
+            background-color:rgb(155, 155, 130);
+        }
+
+        a:hover{
+            color:green
+        }
+
+
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>CSS</title>
+    <h1>CSS(Cascading Style Sheets)</h1>
+</head>
+<body>
+    <p>There are 3 types of CSS:</p>
+    <ol>
+        <li>Inline CSS</li>
+        <li>Internal CSS</li>
+        <li>External CSS</li>
+    </ol>
+
+    <!-- Inline CSS -->
+    <div class="inline">
+        <p style="color:orange;border:1px solid orange;background-color:rgb(243, 240, 240);"> Inline CSS</p>
+    </div>
+    <div> 
+        <p style="color:orange;border:1px solid orange;background-color:rgb(243, 240, 240);"> Inline CSS</p>
+    </div>
+
+    <!-- Internal CSS -->
+     <div class="internal">
+        <p>Internal CSS is used to define styles for a single HTML page.It is added in head tag 
+            by adding style tags in it</p>
+        <p>Internal CSS is added in section of HTML page</p>
+     </div>
+
+        <!-- External CSS -->
+         <div class="external">
+            <p>External CSS is used to define styles for multiple HTML pages. It is added by linking an external CSS file in the head tag of the HTML page.</p>
+            <p>External CSS is added in section of HTML page</p>
+         </div>
+
+         <div id="city1">
+           <div class="city">
+            <article>
+            <p>Paragraph for city 1</p>
+            </article>
+            </div>
+         </div>
+
+         <div>
+            <p>Paragraph for city 2</p>
+            <p>Paragraph second</p>
+            <p>third paragraph</p>
+            <a href="https://www.google.com" target="_blank">Google</a>
+         </div>
+</body>
+</html>
