@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+    <h1>Event Listener</h1>
+</head>
+
+<body>
+
+    <div>
+        <label>Enter Name: </label>
+        <input type="text" id="name" name="name"> <br><br>
+
+        <label>Enter Email: </label>
+        <input type="email" id="email" name="email"> <br>
+
+        <label>Enter Password:</label>
+        <input type="password" id="password" name="password"> <br><br>
+
+        <button type="button" id="ButtonSubmit">submit</button> 
+    </div>
+
+    <script>
+        document.getElementById("name").addEventListener("click", function () {
+            // function addtocart(){
+            alert("add to cart");
+        });
+
+        document.getElementById("email").addEventListener("change", function () {
+            alert("Email change event applied");
+        });
+
+        document.getElementById("password").addEventListener("focus", function () {
+            alert("Password focus event applied");
+        });
+
+         document.getElementById("ButtonSubmit").addEventListener("Click", function () {
+            alert("Submit Button Click");
+        });
+
+
+
+
+    </script>
+
+</body>
+
+</html>
