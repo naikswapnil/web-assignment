@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Events Demo</title>
+<style>
+     
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+}
+
+form{
+    background:#fff;
+    width:100%;
+    max-width:700px;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#333;
+}
+
+#result{
+    text-align:center;
+    margin-bottom:20px;
+    padding:10px;
+    background:#e8f5e9;
+    border-radius:5px;
+    color:#2e7d32;
+    font-weight:bold;
+}
+
+label{
+    font-weight:bold;
+    color:#444;
+    display:block;
+    margin-bottom:5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[list],
+select,
+textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    outline:none;
+    transition:0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#4CAF50;
+    box-shadow:0 0 5px rgba(76,175,80,0.5);
+}
+
+.radio-group,
+.checkbox-group{
+    display:flex;
+    gap:15px;
+    margin:10px 0;
+}
+
+.radio-group label,
+.checkbox-group label{
+    font-weight:normal;
+}
+
+input[type="file"]{
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    width:100%;
+}
+
+.button-group{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+input[type="submit"],
+input[type="reset"]{
+    flex:1;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+input[type="submit"]{
+    background:#4CAF50;
+}
+
+input[type="submit"]:hover{
+    background:#388E3C;
+}
+
+input[type="reset"]{
+    background:#f44336;
+}
+
+input[type="reset"]:hover{
+    background:#d32f2f;
+}
+
+textarea{
+    resize:vertical;
+}
+
+@media(max-width:600px){
+    form{
+        padding:20px;
+    }
+
+    .radio-group,
+    .checkbox-group{
+        flex-direction:column;
+        gap:8px;
+    }
+
+    .button-group{
+        flex-direction:column;
+    }
+}
+</style>
+    <script>
+        function showEvent(msg) {
+            document.getElementById("result").innerHTML = msg;
+        }
+
+        function validateForm() {
+            alert("Form Submitted Successfully!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+<h2>Registration Form with Events</h2>
+
+<p id="result" style="color:green;font-weight:bold;"></p>
+
+<form action="#" method="post" onsubmit="return validateForm()">
+
+    <label>Full Name:</label><br>
+    <input type="text"
+           id="fullname"
+           onfocus="showEvent('Full Name Focused')"
+           onblur="showEvent('Full Name Lost Focus')"
+           onkeyup="showEvent('Typing Name: ' + this.value)">
+    <br><br>
+
+    <label>Email:</label><br>
+    <input type="email"
+           id="email"
+           onchange="showEvent('Email Changed: ' + this.value)">
+    <br><br>
+
+    <label>Password:</label><br>
+    <input type="password"
+           id="password"
+           onclick="showEvent('Password Clicked')">
+    <br><br>
+
+    <label>Confirm Password:</label><br>
+    <input type="password"
+           id="confirm_password"
+           onkeyup="showEvent('Confirm Password Typing')">
+    <br><br>
+
+    <label>Mobile Number:</label><br>
+    <input type="tel"
+           id="mobile"
+           onkeyup="showEvent('Mobile: ' + this.value)">
+    <br><br>
+
+    <label>Date of Birth:</label><br>
+    <input type="date"
+           id="dob"
+           onchange="showEvent('DOB Selected: ' + this.value)">
+    <br><br>
+
+    <label>Gender:</label><br>
+
+    <input type="radio"
+           name="gender"
+           value="Male"
+           onclick="showEvent('Male Selected')">
+    Male
+
+    <input type="radio"
+           name="gender"
+           value="Female"
+           onclick="showEvent('Female Selected')">
+    Female
+
+    <input type="radio"
+           name="gender"
+           value="Other"
+           onclick="showEvent('Other Selected')">
+    Other
+    <br><br>
+
+    <label>Course:</label><br>
+    <select onchange="showEvent('Course Selected: ' + this.value)">
+        <option value="">Select Course</option>
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>JavaScript</option>
+        <option>PHP</option>
+        <option>Python</option>
+    </select>
+    <br><br>
+
+    <label>City:</label><br>
+    <input list="cities"
+           onchange="showEvent('City Selected: ' + this.value)">
+
+    <datalist id="cities">
+        <option value="Mumbai">
+        <option value="Pune">
+        <option value="Nagpur">
+    </datalist>
+    <br><br>
+
+    <label>Hobbies:</label><br>
+
+    <input type="checkbox"
+           value="Reading"
+           onclick="showEvent('Reading Selected')">
+    Reading
+
+    <input type="checkbox"
+           value="Sports"
+           onclick="showEvent('Sports Selected')">
+    Sports
+
+    <input type="checkbox"
+           value="Music"
+           onclick="showEvent('Music Selected')">
+    Music
+    <br><br>
+
+    <label>Address:</label><br>
+    <textarea rows="5" cols="30"
+              onkeyup="showEvent('Address Typing...')"></textarea>
+    <br><br>
+
+    <label>Profile Photo:</label><br>
+    <input type="file"
+           onchange="showEvent('File Selected')">
+    <br><br>
+
+    <input type="submit"
+           value="Register"
+           onclick="showEvent('Submit Button Clicked')">
+
+    <input type="reset"
+           value="Reset"
+           onclick="showEvent('Form Reset')">
+
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="functions">
+     <p id="parameter"> </p>
+     <form>
+        <label>Enter your name</label>
+        <input type="text" id="student_name" name="student_name" ><br>
+        <button type ="button" onclick="behaviour();">Submit</button>
+     </form>
+    </div>
+    <div>
+        <span id="result"></span>
+    </div>
+
+    <script>
+
+        function behaviour(){
+          let name = document.getElementById("student_name").value;
+          document.getElementById("result").innerHTML = name + "is good" + "<br>" + name + "is sincere <br>"  + name + "is regular";
+                                                         
+        }
+    </script>
+</body>
+</html>

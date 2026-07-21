@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <h1>Internal Javscript</h1>
+</head>
+<body>
+    <div class="container">
+        <p id="hello">
+            This is a paragraph
+        </p>
+        <button onclick="changeBackground();">My Button</button>
+    </div>
+    <script>
+        document.getElementById("hello").innerHTML = "Paragraph changed";
+        document.getElementById("hello").style.backgroundColor = "orange";
+
+        function changeBackground(){
+            document.getElementById("hello").style.backgroundColor = "yellow";
+        }
+    </script>
+</body>
+</html>
