@@ -1,70 +1,83 @@
-<?php
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-?>
-
-<!DOCTYPE html>
 <html>
+
 <head>
     <title>My Website</title>
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+    body {
+        background: #F3F4F6;
+    }
+
+    nav {
+        background: #1E3A8A;
+        color: white;
+    }
+
+    .navbar * {
+        color: white !important;
+    }
+
+    .dropdown-menu {
+        background-color: #fff;
+    }
+
+    .dropdown-menu .dropdown-item,
+    .dropdown-menu .dropdown-header {
+        color: #212529 !important;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #212529 !important;
+    }
+    </style>
 </head>
+
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
+            <a class="navbar-brand" href="#">My Website</a>
 
-        <a class="navbar-brand" href="dashboard.php">My Website</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
 
-        <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <span class="navbar-toggler-icon"></span>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        </button>
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="dashboard.php">Home</a>
+                    </li>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            <ul class="navbar-nav me-auto">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="dashboard.php">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-
-            </ul>
-
-            <?php if (isset($_SESSION['user_id'])) { ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.php">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                </ul>
 
                 <ul class="navbar-nav">
 
+                    <?php if(isset($_SESSION['user_id'])) { ?>
+
+                    <!-- User Dropdown -->
                     <li class="nav-item dropdown">
 
-                        <a class="nav-link dropdown-toggle d-flex align-items-center"
-                           href="#"
-                           role="button"
-                           data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
 
-                            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-                                 width="35"
-                                 height="35"
-                                 class="rounded-circle me-2">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" width="35" height="35"
+                                class="rounded-circle me-2">
 
-                            <?php
-                            if (isset($_SESSION['user_name'])) {
-                                echo $_SESSION['user_name'];
-                            } else {
-                                echo "User";
-                            }
-                            ?>
+                            <?php echo $_SESSION['name']; ?>
 
                         </a>
 
@@ -72,17 +85,13 @@ if (session_status() == PHP_SESSION_NONE) {
 
                             <li>
                                 <h6 class="dropdown-header">
-                                    <?php
-                                    if (isset($_SESSION['user_name'])) {
-                                        echo $_SESSION['user_name'];
-                                    } else {
-                                        echo "User";
-                                    }
-                                    ?>
+                                    <?php echo $_SESSION['name']; ?>
                                 </h6>
                             </li>
 
-                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
 
                             <li>
                                 <a class="dropdown-item" href="dashboard.php">
@@ -91,12 +100,10 @@ if (session_status() == PHP_SESSION_NONE) {
                             </li>
 
                             <li>
-                                <a class="dropdown-item" href="#">
-                                    Services
+                                <a class="dropdown-item" href="users.php">
+                                    Users
                                 </a>
                             </li>
-
-                            <li><hr class="dropdown-divider"></li>
 
                             <li>
                                 <a class="dropdown-item text-danger" href="logout.php">
@@ -108,22 +115,25 @@ if (session_status() == PHP_SESSION_NONE) {
 
                     </li>
 
+                    <?php } else { ?>
+
+                    <!-- Show Login/Register if user is not logged in -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php">Login</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.php">Register</a>
+                    </li>
+
+                    <?php } ?>
+
                 </ul>
-
-            <?php } else { ?>
-
-                <a class="btn btn-primary" href="login.php">
-                    Login
-                </a>
-
-            <?php } ?>
+            </div>
 
         </div>
-
-    </div>
-</nav>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

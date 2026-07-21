@@ -1,47 +1,35 @@
 <?php
+
 session_start();
+
 include "connection.php";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$email = $_POST['email'];
+$password = $_POST['password'];
 
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = $_POST['password'];
+$sql = "SELECT * FROM users WHERE email='$email'";
 
-    $sql = "SELECT * FROM user WHERE email = '$email'";
-    $result = mysqli_query($conn, $sql);
+$result = mysqli_query($conn,$sql);
 
-    if (mysqli_num_rows($result) > 0) {
+if(mysqli_num_rows($result)==1)
+{
+    $row = mysqli_fetch_assoc($result);
+  if(password_verify($password, $row['password']))
+    // if(password_verify($password,$row['password']))
+    {
+        $_SESSION['user_id'] = $row['id'];
+        $_SESSION['name'] = $row['name'];
 
-        $row = mysqli_fetch_assoc($result);
-
-        // Plain text password check
-        if ($password == $row['password']) {
-
-            $_SESSION['user_id'] = $row['id'];
-            $_SESSION['user_name'] = $row['name'];   // किंवा username
-
-            header("Location: user.php");
-            exit();
-
-        } else {
-
-            echo "<script>
-                    alert('Invalid Password');
-                    window.location='login.php';
-                  </script>";
-        }
-
-    } else {
-
-        echo "<script>
-                alert('Email Not Found');
-                window.location='login.php';
-              </script>";
+        header("Location: dashboard.php");
     }
-
-} else {
-
-    header("Location: login.php");
-    exit();
+    else
+    {
+        echo "Invalid Password";
+    }
 }
+else
+{
+    echo "Email Not Found";
+}
+
 ?>

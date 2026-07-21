@@ -1,11 +1,12 @@
 <?php
+//Hello world message print
+echo "hello world"."<br>";
 
-echo "Hello World!"."<br>";
+echo("hello world")."<br>";
 
-echo ("Hello World!")."<br>";
+ECHO "hello world"."<br>";
 
-ECHO "Hello World!"."<br>";
+print("hello world");
 
-print("Hello World!")."<br>";
 
 ?>

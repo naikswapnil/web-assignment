@@ -3,7 +3,7 @@
 $num = 5;
 
 # PHP comments
-//var_dump() function is used to check variable datatype
+// var_dump() function is used to check variable datatype
 # var_dump() function is used to check variable datatype
 /*
 var_dump() function is used 
@@ -20,6 +20,5 @@ var_dump($number);
 echo "$color";
 echo '$color';
 
+
 ?>
-
-

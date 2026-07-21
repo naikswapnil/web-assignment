@@ -1,23 +1,21 @@
 <?php
-//Database Configuration
-$serevername = "localhost";
-$userename = "root";
-$password = "";
-$database = "student";
+// Database Configuration
+$servername = "localhost";
+$username   = "root";
+$password   = "root";
+$database   =  "students";
 
-//Cerate Connections
-$conn = mysqli_connect($serevername,$userename,$password,$database);
+// Create Connection
+$conn = mysqli_connect($servername, $username, $password, $database);
 
-//Check Connection
-if(!$conn) 
-    {
-    die("Database Connection Failed:" .mysqli_connect_error());
+// Check Connection
+if (!$conn) {
+    die(" Database Connection Failed: " . mysqli_connect_error());
 }
 else
-    {
-       // echo "Database Connected Succcessfully!";
+{
+    // echo "Database Connected Successfully!";
+}
 
-    }
-    ?>
 
-    
+ 

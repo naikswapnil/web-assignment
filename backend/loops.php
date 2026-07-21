@@ -1,18 +1,19 @@
 <?php
-$students = array("Ram", "Shyam", "Hari", "Gita", "Sita");
+//for each loop
+$students = array("Ram","Shyam","Mohan","Sohan");
 
-foreach($students as $students)
-{
-    echo $students."<br>";
+foreach($students as $student) {
+    echo $student . "<br>";
 }
 
 
-//While Loop
-$num = 1;
-while($num <= 10)
-{
-    echo $num."<br>";
+//while loop
+$num = 5;
+while($num <= 10) {
+    echo $num . "<br>";
     $num++;
+
 }
+
 
 ?>

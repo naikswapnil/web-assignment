@@ -1,8 +1,4 @@
-<?php
-
-include "header.php";
-
-?>
+<?php include "header.php"; ?>
 
 <style>
 section {
@@ -15,10 +11,10 @@ section {
 .login-container {
     width: 400px;
     max-width: 90%;
-    background: #ebe0e0;
+    background: #fff;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .login-container h2 {
@@ -34,7 +30,11 @@ section {
 </style>
 
 <section>
-<div class="login-container">
+
+    <div class="login-container">
+
+        <h2>User Login</h2>
+
         <form action="login_process.php" method="POST">
 
             <label>Email</label>
@@ -50,10 +50,9 @@ section {
             </div>
 
         </form>
-</div>
+
+    </div>
+
 </section>
-<?php
 
-include "footer.php";
-
-?>
+<?php include "footer.php"; ?>

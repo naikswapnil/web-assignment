@@ -1,14 +1,13 @@
 <?php
-session_start();//To start the session
+session_start(); //To start a session
 
 
-$_SESSION["user_id"] = "1";//To set the session variables
-$_SESSION["user_name"] = "John Doe";//To set the session variables
+$_SESSION["user_id"] = 1; // Set a session variable for user ID
+$_SESSION["name"] = "Suraj More"; // Set a session variable for user name
 
-echo "Session variables are set.<br><br>  User ID: " . $_SESSION["user_id"] . " ,<br><br> Name: " . $_SESSION["user_name"];
 
-session_unset();//Remove all session variables
-
-session_destroy();//destroy the session
-
+ 
+session_unset(); // Unset all session variables
+session_destroy(); // Destroy the session
+echo "Session variables are set. User ID: " . $_SESSION["user_id"] . ", Name: " . $_SESSION["name"];
 ?>
