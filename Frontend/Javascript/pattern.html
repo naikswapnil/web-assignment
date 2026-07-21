@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pattern Printer</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button{
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        #output{
+            margin-top: 20px;
+            font-size: 20px;
+            font-family: monospace;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Star Pattern Printer</h2>
+
+    <button onclick="printPattern()">Print Pattern</button>
+
+    <div id="output"></div>
+
+    <script>
+        function printPattern() {
+
+            let pattern = "";
+
+            for(let i = 1; i <= 5; i++) {
+
+                for(let j = 1; j <= i; j++) {
+                    pattern += "*";
+                }
+
+                pattern += "\n";
+            }
+
+            document.getElementById("output").innerText = pattern;
+        }
+    </script>
+
+</body>
+</html>

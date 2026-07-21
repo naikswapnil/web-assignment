@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Delivery App</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f4f4;
+        }
+
+        .container{
+            width:500px;
+            margin:50px auto;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0px 0px 10px gray;
+        }
+
+        h2{
+            text-align:center;
+        }
+
+        label{
+            font-weight:bold;
+        }
+
+        input,select{
+            width:100%;
+            padding:10px;
+            margin:8px 0;
+            box-sizing:border-box;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:green;
+            color:white;
+            border:none;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        #result{
+            margin-top:20px;
+            line-height:1.8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+<h2>🍔 Food Delivery App</h2>
+
+<label>Select Item</label>
+<select id="item">
+    <option value="200">Pizza - ₹200</option>
+    <option value="120">Burger - ₹120</option>
+    <option value="150">Pasta - ₹150</option>
+    <option value="80">French Fries - ₹80</option>
+</select>
+
+<label>Quantity</label>
+<input type="number" id="qty" placeholder="Enter Quantity">
+
+<label>Coupon Code</label>
+<input type="text" id="coupon" placeholder="SAVE100">
+
+<label>Distance (KM)</label>
+<input type="number" id="distance" placeholder="Distance">
+
+<button onclick="placeOrder()">
+Place Order
+</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+function placeOrder()
+{
+    let itemPrice = Number(document.getElementById("item").value);
+    let qty = Number(document.getElementById("qty").value);
+    let coupon = document.getElementById("coupon").value.toUpperCase();
+    let distance = Number(document.getElementById("distance").value);
+
+    if(qty <= 0 || distance <= 0)
+    {
+        alert("Please enter valid values");
+        return;
+    }
+
+    let subtotal = itemPrice * qty;
+
+    // Delivery Charge
+    let deliveryCharge = 0;
+
+    if(distance <= 5)
+    {
+        deliveryCharge = 30;
+    }
+    else if(distance <= 10)
+    {
+        deliveryCharge = 50;
+    }
+    else
+    {
+        deliveryCharge = 80;
+    }
+
+    // GST 5%
+    let gst = subtotal * 0.05;
+
+    let total = subtotal + deliveryCharge + gst;
+
+    // Coupon Discount
+    if(coupon == "SAVE100")
+    {
+        total -= 100;
+    }
+    else if(coupon == "FIRST50")
+    {
+        total -= 50;
+    }
+
+    if(total < 0)
+    {
+        total = 0;
+    }
+
+    document.getElementById("result").innerHTML = `
+        <h3>🧾 Order Summary</h3>
+
+        Food Amount : ₹${subtotal}<br>
+
+        Delivery Charge : ₹${deliveryCharge}<br>
+
+        GST (5%) : ₹${gst.toFixed(2)}<br>
+
+        Coupon Applied : ${coupon=="" ? "No" : coupon}<br>
+
+        <hr>
+
+        <h2>Total Payable : ₹${total.toFixed(2)}</h2>
+    `;
+}
+
+</script>
+
+</body>
+</html>
