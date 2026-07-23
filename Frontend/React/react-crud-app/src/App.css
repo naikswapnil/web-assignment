@@ -69,6 +69,27 @@
     gap: 18px;
   }
 }
+.card {
+    border-radius: 15px;
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0 !important;
+}
+
+.form-control,
+.form-select {
+    height: 45px;
+}
+
+textarea.form-control {
+    height: auto;
+}
+
+.btn-primary {
+    border-radius: 30px;
+    padding: 10px 40px;
+}
 
 #next-steps {
   display: flex;

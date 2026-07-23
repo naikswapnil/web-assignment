@@ -68,9 +68,9 @@ function Header() {
 
               {/* Register */}
               <li className="nav-item">
-                <a className="nav-link" href="/register">
+                <Link className="nav-link" to="/register">
                   Register
-                </a>
+                </Link>
               </li>
 
               {/* User Dropdown */}
