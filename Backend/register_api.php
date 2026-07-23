@@ -1,6 +1,16 @@
 <?php
 
+ 
+header("Access-Control-Allow-Origin: http://localhost:5173");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
 header("Content-Type: application/json");
+
+// Handle preflight request
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
 
 include "connection.php";
 
@@ -82,29 +92,4 @@ if (mysqli_query($conn, $sql)) {
 
 
 
-<!-- 
-+------------------------+------------------+----------------------------------------------+
-| Frontend Technology | Can Use PHP API? | How |
-+------------------------+------------------+----------------------------------------------+
-| HTML + JavaScript | Yes | fetch() or XMLHttpRequest |
-| Bootstrap | Yes | Bootstrap is only for UI; use JavaScript |
-| | | (fetch() or AJAX) to call the API |
-| jQuery | Yes | $.ajax() or $.post() |
-| React.js | Yes | fetch() or axios |
-| Angular | Yes | HttpClient |
-| Vue.js | Yes | axios or fetch() |
-| Next.js | Yes | fetch() or axios |
-| Nuxt.js | Yes | fetch() or axios |
-| Flutter | Yes | http package |
-| React Native | Yes | fetch() or axios |
-| Android (Java/Kotlin) | Yes | Retrofit, Volley, or OkHttp |
-| iOS (Swift) | Yes | URLSession |
-| Ionic | Yes | Angular HttpClient |
-| .NET (Frontend) | Yes | HttpClient |
-+------------------------+------------------+----------------------------------------------+
-
-Conclusion:
-A PHP API can be consumed by any frontend technology or mobile application
-that can send HTTP requests (GET, POST, PUT, DELETE) and process JSON
-responses. The frontend and backend communicate through REST APIs over HTTP.
- -->
+ 
